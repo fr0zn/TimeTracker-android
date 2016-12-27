@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,11 +10,35 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.joans.timetracker.MainActivity">
 
-    <Button
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
-        android:id="@+id/buttonStart"
+        android:inputType="textPersonName"
+        android:text="@string/first_task"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:textSize="18sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:background="@drawable/textview_border"
+        android:focusable="false"
+        android:textAlignment="center"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="104dp"
+        android:layout_alignParentEnd="true"
+        tools:ignore="LabelFor" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@android:color/holo_orange_light"
+        android:id="@+id/floatingActionButton3"
+        app:backgroundTint="@android:color/holo_orange_light"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+
 </RelativeLayout>

@@ -13,15 +13,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button butoPerComensar = (Button) findViewById(R.id.buttonStart);
+    /*  Button butoPerComensar = (Button) findViewById(R.id.buttonStart);
         butoPerComensar.setOnClickListener(butoStartListener);
+    */
     }
 
-    private View.OnClickListener butoStartListener = new View.OnClickListener() {
+    /*private View.OnClickListener butoStartListener = new View.OnClickListener() {
         public void onClick(View v) {
             Intent intent = new Intent(MainActivity.this, LlistaActivitatsActivity.class);
             startActivity(intent);
         }
-    };
+    };*/
 
 }

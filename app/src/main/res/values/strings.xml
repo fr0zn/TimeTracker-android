@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TimeTracker</string>
+    <string name="first_task">Please add your 1st task</string>
 </resources>
