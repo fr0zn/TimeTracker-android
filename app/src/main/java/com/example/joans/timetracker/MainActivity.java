@@ -1,12 +1,9 @@
 package com.example.joans.timetracker;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuInflater;
-import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
+import android.view.*;
+import android.support.design.widget.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,13 +11,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-
-        /*  Button butoPerComensar = (Button) findViewById(R.id.buttonStart);
-        butoPerComensar.setOnClickListener(butoStartListener);
-    */
+        FloatingActionButton addTask = (FloatingActionButton) findViewById(R.id.addTask);
+        addTask.setOnClickListener(addTaskListener);
     }
 
     @Override
@@ -29,13 +21,11 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-
-
-    /*private View.OnClickListener butoStartListener = new View.OnClickListener() {
+    private View.OnClickListener addTaskListener = new View.OnClickListener() {
         public void onClick(View v) {
-            Intent intent = new Intent(MainActivity.this, LlistaActivitatsActivity.class);
+            Intent intent = new Intent(MainActivity.this, AddTask.class);
             startActivity(intent);
         }
-    };*/
+    };
 
 }

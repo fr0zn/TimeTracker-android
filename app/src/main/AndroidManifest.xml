@@ -11,23 +11,20 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".LlistaActivitatsActivity">
-        </activity>
-
-        <activity
-            android:name=".LlistaIntervalsActivity">
-        </activity>
+        <activity android:name=".LlistaActivitatsActivity"></activity>
+        <activity android:name=".LlistaIntervalsActivity"></activity>
 
         <service
-            android:name="GestorArbreActivitats"
-            android:enabled="true" >
-        </service>
+            android:name=".GestorArbreActivitats"
+            android:enabled="true"></service>
 
+        <activity android:name=".AddTask" android:label="@string/add_task_title">
+
+        </activity>
     </application>
 
 </manifest>
