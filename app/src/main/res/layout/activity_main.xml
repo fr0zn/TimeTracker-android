@@ -32,13 +32,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:srcCompat="@android:color/holo_orange_light"
+        android:src="@drawable/add_circle"
         android:id="@+id/floatingActionButton3"
-        app:backgroundTint="@android:color/holo_orange_light"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="32dp"
+        android:scaleType="center"
+        android:layout_marginBottom="26dp"
+        app:backgroundTint="?android:attr/colorPressedHighlight"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
-
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="13dp"
+        app:rippleColor="@android:color/white" />
 
 </RelativeLayout>
