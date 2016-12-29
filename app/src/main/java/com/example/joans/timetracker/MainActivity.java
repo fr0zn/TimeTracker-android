@@ -3,6 +3,8 @@ package com.example.joans.timetracker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuInflater;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,10 +15,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    /*  Button butoPerComensar = (Button) findViewById(R.id.buttonStart);
+
+
+
+        /*  Button butoPerComensar = (Button) findViewById(R.id.buttonStart);
         butoPerComensar.setOnClickListener(butoStartListener);
     */
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_actions, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
 
     /*private View.OnClickListener butoStartListener = new View.OnClickListener() {
         public void onClick(View v) {

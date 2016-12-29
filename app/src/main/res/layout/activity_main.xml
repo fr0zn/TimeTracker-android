@@ -35,11 +35,13 @@
         android:src="@drawable/add_circle"
         android:id="@+id/floatingActionButton3"
         android:scaleType="center"
-        android:layout_marginBottom="26dp"
+        android:layout_marginBottom="29dp"
         app:backgroundTint="?android:attr/colorPressedHighlight"
+        app:rippleColor="@android:color/white"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="13dp"
-        app:rippleColor="@android:color/white" />
+        android:layout_marginEnd="13dp" />
+
 
 </RelativeLayout>
+
