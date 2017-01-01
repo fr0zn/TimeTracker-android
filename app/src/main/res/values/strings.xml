@@ -6,6 +6,8 @@
     <string name="description">Descripció</string>
     <string name="my_task">La meva tasca</string>
     <string name="my_task_description">Descripció de la meva tasca</string>
+    <string name="my_project">El meu projecte</string>
+    <string name="my_project_description">Descripció del meu projecte</string>
     <string name="ok_button">D\'acord</string>
     <string name="add_task_title">Afegir tasca</string>
 </resources>
