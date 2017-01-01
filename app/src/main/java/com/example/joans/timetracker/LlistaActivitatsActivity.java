@@ -8,6 +8,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -164,6 +165,8 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
                 assert false : "intent d'acció no prevista";
             }
         }
+
+
     }
 
     /**
@@ -490,6 +493,12 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
         if (Log.isLoggable(tag, Log.VERBOSE)) {
             Log.v(tag, newConfig.toString());
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.accions_principals, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
 }

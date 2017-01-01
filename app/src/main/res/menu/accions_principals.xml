@@ -1,9 +1,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/menu_add_size"
+    <item android:id="@+id/informe"
         android:title="@string/report_action"
-        android:icon="@drawable/report"
+        android:icon="@drawable/informe"
         app:showAsAction="always" />
 
 </menu>

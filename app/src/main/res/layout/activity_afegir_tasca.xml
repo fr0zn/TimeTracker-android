@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.joans.timetracker.AddTask">
+    tools:context="com.example.joans.timetracker.AfegirTasca">
 
     <TextView
         android:text="@string/description"
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="@string/my_task_description"
+        android:text="@string/my_task"
         android:ems="10"
         android:id="@+id/editText7"
         android:textSize="20sp"
@@ -50,9 +50,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="@string/my_task"
+        android:text="@string/my_task_description"
         android:ems="10"
-
+        android:textSize="20sp"
         android:id="@+id/editText6"
         android:layout_below="@+id/textView4"
         android:layout_alignStart="@+id/textView4"
@@ -62,7 +62,7 @@
         android:text="@string/ok_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
+        android:id="@+id/addTaskOK"
         android:layout_marginTop="430dp"
         android:layout_marginLeft="120dp" />
 

@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">TimeTracker</string>
-    <string name="first_task">Please add your 1st task</string>
-    <string name="report_action">Reports</string>
-    <string name="title">Title</string>
-    <string name="description">Description</string>
-    <string name="my_task">My task</string>
-    <string name="my_task_description">My task description</string>
-    <string name="ok_button">OK</string>
-    <string name="add_task_title">Add Task</string>
+    <string name="first_task">Si us plau, afegeix una primera tasca</string>
+    <string name="report_action">Informes</string>
+    <string name="title">Títol</string>
+    <string name="description">Descripció</string>
+    <string name="my_task">La meva tasca</string>
+    <string name="my_task_description">Descripció de la meva tasca</string>
+    <string name="ok_button">D\'acord</string>
+    <string name="add_task_title">Afegir tasca</string>
 </resources>
