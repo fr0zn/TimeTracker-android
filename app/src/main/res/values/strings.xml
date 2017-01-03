@@ -1,14 +1,16 @@
 <resources>
+    <!-- Títols de les activitats -->
+    <string name="app_name">TimeTracker</string>
     <string name="add_task_title">Afegir tasca</string>
     <string name="add_project_title">Afegir projecte</string>
-    <string name="info_project_title">Informació del projecte</string>
+    <string name="edit_project_title">Edita el projecte</string>
+    <string name="edit_task_title">Edita la tasca</string>
     <string name="new_report_title">Nou informe</string>
 
-    <string name="app_name">TimeTracker</string>
+
     <string name="first_task">Si us plau, afegeix una primera tasca</string>
     <string name="report_action">Informes</string>
     <string name="title">Títol</string>
-
     <string name="description">Descripció</string>
     <string name="my_task">La meva tasca</string>
     <string name="my_task_description">Descripció de la meva tasca</string>

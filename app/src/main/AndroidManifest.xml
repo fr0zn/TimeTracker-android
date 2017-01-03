@@ -16,15 +16,15 @@
         </activity>
         <activity android:name=".LlistaActivitatsActivity"></activity>
         <activity android:name=".LlistaIntervalsActivity"></activity>
-
         <service
             android:name=".GestorArbreActivitats"
             android:enabled="true"></service>
-
         <activity android:name=".AfegirTascaActivity" android:label="@string/add_task_title"></activity>
         <activity android:name=".AfegirProjecteActivity" android:label="@string/add_project_title"></activity>
-        <activity android:name=".InfoProjecteActivity" android:label="@string/info_project_title"></activity>
+        <activity android:name=".EditarTascaActivity" android:label="@string/edit_task_title"></activity>
+        <activity android:name=".EditarProjecteActivity" android:label="@string/edit_project_title"></activity>
         <activity android:name=".NouInformeActivity" android:label="@string/new_report_title"></activity>
-    </application>
 
+
+    </application>
 </manifest>

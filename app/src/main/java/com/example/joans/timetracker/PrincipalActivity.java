@@ -17,7 +17,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
     private View.OnClickListener addTaskListener = new View.OnClickListener() {
         public void onClick(View v) {
-            Intent intent = new Intent(PrincipalActivity.this, InfoProjecteActivity.class);
+            Intent intent = new Intent(PrincipalActivity.this, AfegirTascaActivity.class);
             startActivity(intent);
         }
     };
