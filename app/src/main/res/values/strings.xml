@@ -10,4 +10,5 @@
     <string name="my_project_description">Descripció del meu projecte</string>
     <string name="ok_button">D\'acord</string>
     <string name="add_task_title">Afegir tasca</string>
+    <string name="report">Nou informe</string>
 </resources>

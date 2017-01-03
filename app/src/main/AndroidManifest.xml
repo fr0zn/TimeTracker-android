@@ -11,7 +11,6 @@
         <activity android:name=".ActivitatPrincipal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -22,9 +21,8 @@
             android:name=".GestorArbreActivitats"
             android:enabled="true"></service>
 
-        <activity android:name=".AfegirTasca" android:label="@string/add_task_title">
-
-        </activity>
+        <activity android:name=".AfegirTasca" android:label="@string/add_task_title"></activity>
+        <activity android:name=".Informe" android:label="@string/report"></activity>
     </application>
 
 </manifest>

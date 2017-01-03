@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.*;
 import android.support.design.widget.*;
-import android.widget.AdapterView.*;
 
 public class ActivitatPrincipal extends AppCompatActivity {
 
@@ -30,17 +29,19 @@ public class ActivitatPrincipal extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    /*@Override
-    public boolean onContextItemSelected(MenuItem item) {
-        //AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
         switch (item.getItemId()) {
             case R.id.informe:
                 Intent intent = new Intent(ActivitatPrincipal.this, Informe.class);
                 startActivity(intent);
                 return true;
             default:
-                return super.onContextItemSelected(item);
+                return super.onOptionsItemSelected(item);
         }
-    }*/
+    }
+
+
 
 }
