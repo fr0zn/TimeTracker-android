@@ -24,8 +24,8 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="@string/my_project"
+        android:inputType="none"
+        android:text=""
         android:ems="10"
         android:id="@+id/titol"
         android:textSize="20sp"
@@ -49,8 +49,8 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="@string/my_project_description"
+        android:inputType="none"
+        android:text=""
         android:ems="10"
         android:textSize="20sp"
         android:id="@+id/descripcio"

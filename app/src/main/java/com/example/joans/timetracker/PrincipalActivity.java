@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.*;
 import android.support.design.widget.*;
 
-public class ActivitatPrincipal extends AppCompatActivity {
+public class PrincipalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
 
     private View.OnClickListener addTaskListener = new View.OnClickListener() {
         public void onClick(View v) {
-            Intent intent = new Intent(ActivitatPrincipal.this, AfegirTasca.class);
+            Intent intent = new Intent(PrincipalActivity.this, InfoProjecteActivity.class);
             startActivity(intent);
         }
     };
@@ -34,7 +34,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.informe:
-                Intent intent = new Intent(ActivitatPrincipal.this, Informe.class);
+                Intent intent = new Intent(PrincipalActivity.this, NouInformeActivity.class);
                 startActivity(intent);
                 return true;
             default:

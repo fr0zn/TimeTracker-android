@@ -8,7 +8,31 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.joans.timetracker.AfegirTasca">
+    tools:context="com.example.joans.timetracker.AfegirTascaActivity">
+
+    <TextView
+        android:text="@string/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:id="@+id/textView3"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/titol" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/my_task"
+        android:ems="10"
+        android:id="@+id/titol"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/textView4"
+        android:textColorLink="@color/colorAccent"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:text="@string/description"
@@ -17,7 +41,7 @@
         android:id="@+id/textView4"
         android:textSize="20sp"
         android:textColor="@android:color/background_dark"
-        android:layout_below="@+id/editText7"
+        android:layout_below="@+id/titol"
         android:layout_alignParentStart="true"
         android:layout_marginStart="38dp"
         android:layout_marginTop="23dp" />
@@ -26,35 +50,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="@string/my_task"
-        android:ems="10"
-        android:id="@+id/editText7"
-        android:textSize="20sp"
-        android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/textView4"
-        android:textColorLink="@color/colorAccent"
-        tools:ignore="LabelFor" />
-
-    <TextView
-        android:text="@string/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
-        android:id="@+id/textView3"
-
-        android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editText7" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:text="@string/my_task_description"
         android:ems="10"
         android:textSize="20sp"
-        android:id="@+id/editText6"
+        android:id="@+id/descripcio"
         android:layout_below="@+id/textView4"
         android:layout_alignStart="@+id/textView4"
         android:textColorLink="@android:color/holo_orange_light"
