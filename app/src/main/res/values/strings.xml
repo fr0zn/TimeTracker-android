@@ -7,15 +7,26 @@
     <string name="edit_task_title">Edita la tasca</string>
     <string name="new_report_title">Nou informe</string>
 
-
+    <!-- 1st activity -->
     <string name="first_task">Si us plau, afegeix una primera tasca</string>
     <string name="report_action">Informes</string>
+
+    <!-- Projects and tasks -->
     <string name="title">Títol</string>
     <string name="description">Descripció</string>
     <string name="my_task">La meva tasca</string>
     <string name="my_task_description">Descripció de la meva tasca</string>
     <string name="my_project">El meu projecte</string>
     <string name="my_project_description">Descripció del meu projecte</string>
-
     <string name="ok_button">D\'acord</string>
+
+    <!-- Report -->
+    <string name="period">Període</string>
+    <string-array name="periods">
+        <item>Setmana passada</item>
+        <item>Mes passat</item>
+        <item>Any passat</item>
+        <item>Personalitzat</item>
+    </string-array>
+
 </resources>

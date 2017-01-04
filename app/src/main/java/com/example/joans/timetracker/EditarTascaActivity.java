@@ -11,7 +11,7 @@ public class EditarTascaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_editar_projecte);
+        setContentView(R.layout.activity_editar_tasca);
         Button tornarOK = (Button) findViewById(R.id.addTaskOK);
         tornarOK.setOnClickListener(butoStartListener);
     }
