@@ -19,9 +19,13 @@ public class AfegirTascaActivity extends AppCompatActivity {
     private View.OnClickListener butoStartListener = new View.OnClickListener() {
         public void onClick(View v) {
             Intent intent = new Intent(AfegirTascaActivity.this, LlistaActivitatsActivity.class);
+            Intent novaTasca = new Intent(AfegirTascaActivity.this, GestorArbreActivitats.class);
+            sendBroadcast(novaTasca);
             startActivity(intent);
         }
     };
+
+
 
 }
 
