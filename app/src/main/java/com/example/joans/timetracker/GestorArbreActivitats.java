@@ -307,7 +307,7 @@ public class GestorArbreActivitats extends Service implements Actualitzable {
         filter.addAction(LlistaActivitatsActivity.DESA_ARBRE);
         filter.addAction(LlistaActivitatsActivity.PARA_SERVEI);
         filter.addAction(LlistaIntervalsActivity.PUJA_NIVELL);
-        filter.addAction(AfegirTascaActivity.CREAR_TASCA);
+        filter.addAction(LlistaActivitatsActivity.CREAR_TASCA);
         receptor = new Receptor();
         registerReceiver(receptor, filter);
 
@@ -425,6 +425,7 @@ public class GestorArbreActivitats extends Service implements Actualitzable {
         public final void onReceive(final Context context,
                 final Intent intent) {
             Log.d(tag, "onReceive");
+
             String accio = intent.getAction();
             Log.d(tag, "accio = " + accio);
             if ((accio.equals(LlistaActivitatsActivity.ENGEGA_CRONOMETRE))
@@ -493,11 +494,9 @@ public class GestorArbreActivitats extends Service implements Actualitzable {
                 activitatPareActual = activitatClicada;
             } else if (accio.equals(LlistaActivitatsActivity.PARA_SERVEI)) {
                 paraServei();
-            } else if (accio.equals(AfegirTascaActivity.CREAR_TASCA)) {
-                Log.d(tag, "crear una nova tasca");
+            } else if (accio.equals(LlistaActivitatsActivity.CREAR_TASCA)) {
+                Log.d(tag, "crear");
                 //new Projecte("prueba", "prueba", (Projecte) activitatPareActual);
-
-
             } else {
                 Log.d(tag, "accio desconeguda!");
             }

@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+import java.lang.Thread;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -310,17 +310,19 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
         aaAct = new ArrayAdapter<DadesActivitat>(this, layoutID,
                 llistaDadesActivitats);
         arrelListView.setAdapter(aaAct);
+
+
+        //Falla la sincronizacion!!
         String opcio = getIntent().getStringExtra("opcio");
         if ((opcio.equals(AfegirTascaActivity.CREAR_TASCA))) {
-            Intent intent = new Intent(AfegirTascaActivity.CREAR_TASCA);
+            Intent intent2 = new Intent(LlistaActivitatsActivity.CREAR_TASCA);
             String titol = getIntent().getStringExtra("titol");
             String descripcio = getIntent().getStringExtra("descripcio");
-            intent.putExtra("titol", titol);
-            intent.putExtra("descripcio", descripcio);
-            Log.d("TAG", "Informació tasca -> Titol: "+titol+" descripcio: "+descripcio);
-
+            intent2.putExtra("titol", titol);
+            intent2.putExtra("descripcio", descripcio);
+            Log.d("TAG", "Titol: "+titol+" descripcio: "+descripcio+" accio: "+intent2.getAction().toString());
+            sendBroadcast(intent2);
         }
-
 
         // Un click serveix per navegar per l'arbre de projectes, tasques
         // i intervals. Un long click es per cronometrar una tasca, si és que

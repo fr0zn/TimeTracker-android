@@ -22,6 +22,7 @@ public class AfegirTascaActivity extends AppCompatActivity {
 
     private View.OnClickListener AfegirTascaOKListener = new View.OnClickListener() {
         public void onClick(View v) {
+
             // Recopilació de dades per enviar per broadcast l'intent
             Intent novaTasca = new Intent(AfegirTascaActivity.this, LlistaActivitatsActivity.class);
             EditText titolEntrada = (EditText)findViewById(R.id.titol);
@@ -30,6 +31,11 @@ public class AfegirTascaActivity extends AppCompatActivity {
             novaTasca.putExtra("descripcio", descripcioEntrada.getText().toString());
             novaTasca.putExtra("opcio", CREAR_TASCA);
             startActivity(novaTasca);
+
+
+            //Desde aqui el gestor lo recibe wtf
+            //Intent intent2 = new Intent(LlistaActivitatsActivity.CREAR_TASCA);
+            //sendBroadcast(intent2);
 
         }
     };
