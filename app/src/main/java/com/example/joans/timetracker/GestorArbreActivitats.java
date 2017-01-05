@@ -494,7 +494,10 @@ public class GestorArbreActivitats extends Service implements Actualitzable {
             } else if (accio.equals(LlistaActivitatsActivity.PARA_SERVEI)) {
                 paraServei();
             } else if (accio.equals(AfegirTascaActivity.CREAR_TASCA)) {
-                Log.d(tag, "entra");
+                Log.d(tag, "crear una nova tasca");
+                //new Projecte("Visió artificial", "segon projecte", arrel);
+
+
             } else {
                 Log.d(tag, "accio desconeguda!");
             }

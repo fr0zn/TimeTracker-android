@@ -1,5 +1,6 @@
 package com.example.joans.timetracker;
 
+import android.content.IntentFilter;
 import android.util.Log;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +10,6 @@ import android.widget.*;
 
 public class AfegirTascaActivity extends AppCompatActivity {
 
-    // Acció de crear tasca
     public static final String CREAR_TASCA = "Crear_tasca";
 
     @Override
@@ -17,10 +17,11 @@ public class AfegirTascaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_afegir_tasca);
         Button afegirTascaOK = (Button) findViewById(R.id.addTaskOK);
-        afegirTascaOK.setOnClickListener(butoStartListener);
+        afegirTascaOK.setOnClickListener(AfegirTascaOKListener);
+
     }
 
-    private View.OnClickListener butoStartListener = new View.OnClickListener() {
+    private View.OnClickListener AfegirTascaOKListener = new View.OnClickListener() {
         public void onClick(View v) {
             // Recopilació de dades per enviar per broadcast l'intent
             Intent novaTasca = new Intent(AfegirTascaActivity.CREAR_TASCA);
@@ -29,13 +30,16 @@ public class AfegirTascaActivity extends AppCompatActivity {
             novaTasca.putExtra("titol", titolEntrada.getText().toString());
             novaTasca.putExtra("descripcio", descripcioEntrada.getText().toString());
             sendBroadcast(novaTasca);
-            Log.d("tag", "entra11");
+            // Passa a pantalla de llista d'activitats
             Intent intent = new Intent(AfegirTascaActivity.this, LlistaActivitatsActivity.class);
             startActivity(intent);
         }
     };
 
-
+    public final void onResume() {
+        startService(new Intent(this, GestorArbreActivitats.class));
+        super.onResume();
+    }
 
 }
 
