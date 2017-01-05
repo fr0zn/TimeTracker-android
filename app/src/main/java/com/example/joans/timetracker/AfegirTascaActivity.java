@@ -18,28 +18,23 @@ public class AfegirTascaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_afegir_tasca);
         Button afegirTascaOK = (Button) findViewById(R.id.addTaskOK);
         afegirTascaOK.setOnClickListener(AfegirTascaOKListener);
-
     }
 
     private View.OnClickListener AfegirTascaOKListener = new View.OnClickListener() {
         public void onClick(View v) {
             // Recopilació de dades per enviar per broadcast l'intent
-            Intent novaTasca = new Intent(AfegirTascaActivity.CREAR_TASCA);
+            Intent novaTasca = new Intent(AfegirTascaActivity.this, LlistaActivitatsActivity.class);
             EditText titolEntrada = (EditText)findViewById(R.id.titol);
             EditText descripcioEntrada = (EditText)findViewById(R.id.titol);
             novaTasca.putExtra("titol", titolEntrada.getText().toString());
             novaTasca.putExtra("descripcio", descripcioEntrada.getText().toString());
-            sendBroadcast(novaTasca);
-            // Passa a pantalla de llista d'activitats
-            Intent intent = new Intent(AfegirTascaActivity.this, LlistaActivitatsActivity.class);
-            startActivity(intent);
+            novaTasca.putExtra("opcio", CREAR_TASCA);
+            startActivity(novaTasca);
+
         }
     };
 
-    public final void onResume() {
-        startService(new Intent(this, GestorArbreActivitats.class));
-        super.onResume();
-    }
+
 
 }
 

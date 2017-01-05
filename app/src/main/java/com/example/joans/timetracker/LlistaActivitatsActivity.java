@@ -160,7 +160,7 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
                 // això farà redibuixar el ListView
                 aaAct.notifyDataSetChanged();
                 Log.d(tag, "mostro els fills actualitzats");
-            } else {
+            }else {
                 // no pot ser
                 assert false : "intent d'acció no prevista";
             }
@@ -178,6 +178,17 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
     // aquesta classe a la classe Service GestorArbreActivitats, en funció
     // de la interacció de l'usuari:
 
+    /**
+     * Opcions interactives del usuari
+     */
+    public static final String CREAR_TASCA = "Crear_tasca";
+    public static final String CREAR_PROJECTE = "Crear_projecte";
+    public static final String EDITAR_TASCA = "Editar_tasca";
+    public static final String EDITAR_PROJECTE = "Editar_projecte";
+    public static final String VEURE_TASCA = "Veure_tasca";
+    public static final String VEURE_PROJECTE = "Veure_projecte";
+    public static final String BORRAR_TASCA = "Borrar_tasca";
+    public static final String BORRAR_PROJECTE = "Borrar_projecte";
     /**
      * String que defineix l'acció de demanar a <code>GestorActivitats</code> la
      * llista de les dades dels fills de l'activitat actual, que és un projecte.
@@ -257,7 +268,6 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
         // per que startService s'executa asíncronament = retorna de seguida,
         // i la petició no trobava el servei creat encara.
         startService(new Intent(this, GestorArbreActivitats.class));
-
         super.onResume();
         Log.i(tag, "final de onResume");
     }
@@ -292,17 +302,25 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
     public final void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(tag, "onCreate");
-
         setContentView(R.layout.activity_llista_activitats);
         arrelListView = (ListView) this.findViewById(R.id.listViewActivitats);
-
         llistaDadesActivitats = new ArrayList<DadesActivitat>();
         //aaAct = new ArrayAdapter<DadesActivitat>(this, layoutID,
         //        llistaDadesActivitats);
         aaAct = new ArrayAdapter<DadesActivitat>(this, layoutID,
                 llistaDadesActivitats);
-
         arrelListView.setAdapter(aaAct);
+        String opcio = getIntent().getStringExtra("opcio");
+        if ((opcio.equals(AfegirTascaActivity.CREAR_TASCA))) {
+            Intent intent = new Intent(AfegirTascaActivity.CREAR_TASCA);
+            String titol = getIntent().getStringExtra("titol");
+            String descripcio = getIntent().getStringExtra("descripcio");
+            intent.putExtra("titol", titol);
+            intent.putExtra("descripcio", descripcio);
+            Log.d("TAG", "Informació tasca -> Titol: "+titol+" descripcio: "+descripcio);
+
+        }
+
 
         // Un click serveix per navegar per l'arbre de projectes, tasques
         // i intervals. Un long click es per cronometrar una tasca, si és que
