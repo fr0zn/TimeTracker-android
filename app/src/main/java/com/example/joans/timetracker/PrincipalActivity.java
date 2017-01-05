@@ -27,6 +27,9 @@ public class PrincipalActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.accions_principals, menu);
+        menu.findItem(R.id.esborrar).setVisible(false);
+        menu.findItem(R.id.editar).setVisible(false);
+        menu.findItem(R.id.info).setVisible(false);
         return super.onCreateOptionsMenu(menu);
     }
 

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -61,6 +62,8 @@ import java.util.List;
  */
 
 public class LlistaActivitatsActivity extends AppCompatActivity {
+
+    private Menu menu;
 
     /**
      * Nom de la classe per fer aparèixer als missatges de logging del LogCat.
@@ -313,7 +316,7 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
 
 
         //Falla la sincronizacion!!
-        String opcio = getIntent().getStringExtra("opcio");
+        /*String opcio = getIntent().getStringExtra("opcio");
         if ((opcio.equals(AfegirTascaActivity.CREAR_TASCA))) {
             Intent intent2 = new Intent(LlistaActivitatsActivity.CREAR_TASCA);
             String titol = getIntent().getStringExtra("titol");
@@ -322,7 +325,7 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
             intent2.putExtra("descripcio", descripcio);
             Log.d("TAG", "Titol: "+titol+" descripcio: "+descripcio+" accio: "+intent2.getAction().toString());
             sendBroadcast(intent2);
-        }
+        }*/
 
         // Un click serveix per navegar per l'arbre de projectes, tasques
         // i intervals. Un long click es per cronometrar una tasca, si és que
@@ -359,7 +362,12 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(final AdapterView<?> arg0,
                                            final View arg1, final int pos, final long id) {
-                Log.i(tag, "onItemLongClick");
+                menu.findItem(R.id.esborrar).setVisible(true);
+                menu.findItem(R.id.editar).setVisible(true);
+                menu.findItem(R.id.info).setVisible(true);
+                return true;
+                // No esborrar codi per cronometrar!!!
+                /*   Log.i(tag, "onItemLongClick");
                 Log.d(tag, "pos = " + pos + ", id = " + id);
 
                 if (llistaDadesActivitats.get(pos).isTasca()) {
@@ -392,8 +400,8 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
                 //
                 // Si retornem false, l'event long click es tornat a processar
                 // pel listener de click "normal", fent que seguidament a
-                // ordenar el cronometrat passem a veure la llista d'intervals.
-                return true;
+                // ordenar el cronometrat passem a veure la llista d'intervals. */
+
             }
         });
 
@@ -518,7 +526,24 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.accions_principals, menu);
+        menu.findItem(R.id.esborrar).setVisible(false);
+        menu.findItem(R.id.editar).setVisible(false);
+        menu.findItem(R.id.info).setVisible(false);
+        this.menu = menu;
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.informe:
+                Intent intent = new Intent(LlistaActivitatsActivity.this, NouInformeActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

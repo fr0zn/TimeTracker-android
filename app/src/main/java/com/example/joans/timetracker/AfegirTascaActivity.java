@@ -18,6 +18,7 @@ public class AfegirTascaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_afegir_tasca);
         Button afegirTascaOK = (Button) findViewById(R.id.addTaskOK);
         afegirTascaOK.setOnClickListener(AfegirTascaOKListener);
+        startService(new Intent(this, GestorArbreActivitats.class));
     }
 
     private View.OnClickListener AfegirTascaOKListener = new View.OnClickListener() {
@@ -36,6 +37,7 @@ public class AfegirTascaActivity extends AppCompatActivity {
             //Desde aqui el gestor lo recibe wtf
             //Intent intent2 = new Intent(LlistaActivitatsActivity.CREAR_TASCA);
             //sendBroadcast(intent2);
+
 
         }
     };

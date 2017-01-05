@@ -7,10 +7,12 @@
     <string name="edit_task_title">Edita la tasca</string>
     <string name="new_report_title">Nou informe</string>
 
-    <!-- 1st activity -->
+    <!-- 1st activity & menus -->
     <string name="first_task">Si us plau, afegeix una primera tasca</string>
     <string name="report_action">Informes</string>
-
+    <string name="info_action">Informació</string>
+    <string name="delete_action">Esborrar</string>
+    <string name="edit_action">Editar</string>
     <!-- Projects and tasks -->
     <string name="title">Títol</string>
     <string name="description">Descripció</string>
@@ -28,5 +30,6 @@
         <item>Any passat</item>
         <item>Personalitzat</item>
     </string-array>
+
 
 </resources>

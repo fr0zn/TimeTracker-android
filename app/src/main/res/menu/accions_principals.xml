@@ -6,4 +6,19 @@
         android:icon="@drawable/informe"
         app:showAsAction="always" />
 
+    <item android:id="@+id/info"
+        android:title="@string/info_action"
+        android:icon="@drawable/info"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/editar"
+        android:title="@string/edit_action"
+        android:icon="@drawable/editar"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/esborrar"
+        android:title="@string/delete_action"
+        android:icon="@drawable/esborrar"
+        app:showAsAction="always" />
+
 </menu>
