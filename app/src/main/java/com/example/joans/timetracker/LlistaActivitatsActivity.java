@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -163,6 +164,8 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
                 // això farà redibuixar el ListView
                 aaAct.notifyDataSetChanged();
                 Log.d(tag, "mostro els fills actualitzats");
+            }else if (intent.getAction().equals(AfegirTascaActivity.INFO_CREAR_TASCA)){
+                Log.d("tag", "entra");
             }else {
                 // no pot ser
                 assert false : "intent d'acció no prevista";
@@ -258,6 +261,7 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
         IntentFilter filter;
         filter = new IntentFilter();
         filter.addAction(GestorArbreActivitats.TE_FILLS);
+        filter.addAction(AfegirTascaActivity.INFO_CREAR_TASCA);
         receptor = new Receptor();
         registerReceiver(receptor, filter);
 
@@ -313,19 +317,6 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
         aaAct = new ArrayAdapter<DadesActivitat>(this, layoutID,
                 llistaDadesActivitats);
         arrelListView.setAdapter(aaAct);
-
-
-        //Falla la sincronizacion!!
-        /*String opcio = getIntent().getStringExtra("opcio");
-        if ((opcio.equals(AfegirTascaActivity.CREAR_TASCA))) {
-            Intent intent2 = new Intent(LlistaActivitatsActivity.CREAR_TASCA);
-            String titol = getIntent().getStringExtra("titol");
-            String descripcio = getIntent().getStringExtra("descripcio");
-            intent2.putExtra("titol", titol);
-            intent2.putExtra("descripcio", descripcio);
-            Log.d("TAG", "Titol: "+titol+" descripcio: "+descripcio+" accio: "+intent2.getAction().toString());
-            sendBroadcast(intent2);
-        }*/
 
         // Un click serveix per navegar per l'arbre de projectes, tasques
         // i intervals. Un long click es per cronometrar una tasca, si és que
@@ -404,10 +395,54 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
 
             }
         });
+        FloatingActionButton menuFAB = (FloatingActionButton) findViewById(R.id.menuFAB);
+        menuFAB.setOnClickListener(listenerFAB);
+        FloatingActionButton afegirTasca = (FloatingActionButton) findViewById(R.id.tascaFAB);
+        afegirTasca.setOnClickListener(tascaListenerFAB);
+        FloatingActionButton afegirProjecte = (FloatingActionButton) findViewById(R.id.projecteFAB);
+        afegirProjecte.setOnClickListener(projecteListenerFAB);
 
     }
 
-    /**
+    private View.OnClickListener listenerFAB = new View.OnClickListener() {
+        public void onClick(View v) {
+            FloatingActionButton afegirProjecte = (FloatingActionButton) findViewById(R.id.projecteFAB);
+            FloatingActionButton afegirTasca = (FloatingActionButton) findViewById(R.id.tascaFAB);
+            if (afegirProjecte.getVisibility() == View.VISIBLE && afegirTasca.getVisibility() == View.VISIBLE){
+                afegirProjecte.setVisibility(View.INVISIBLE);
+                afegirTasca.setVisibility(View.INVISIBLE);
+            }else{
+                afegirProjecte.setVisibility(View.VISIBLE);
+                afegirTasca.setVisibility(View.VISIBLE);
+            }
+        }
+    };
+
+    private View.OnClickListener tascaListenerFAB = new View.OnClickListener() {
+        public void onClick(View v) {
+            FloatingActionButton afegirProjecte = (FloatingActionButton) findViewById(R.id.projecteFAB);
+            FloatingActionButton afegirTasca = (FloatingActionButton) findViewById(R.id.tascaFAB);
+            afegirProjecte.setVisibility(View.INVISIBLE);
+            afegirTasca.setVisibility(View.INVISIBLE);
+            Intent tascaIntent = new Intent(LlistaActivitatsActivity.this, AfegirTascaActivity.class);
+            startActivity(tascaIntent);
+        }
+    };
+
+    private View.OnClickListener projecteListenerFAB = new View.OnClickListener() {
+        public void onClick(View v) {
+            FloatingActionButton afegirProjecte = (FloatingActionButton) findViewById(R.id.projecteFAB);
+            FloatingActionButton afegirTasca = (FloatingActionButton) findViewById(R.id.tascaFAB);
+            afegirProjecte.setVisibility(View.INVISIBLE);
+            afegirTasca.setVisibility(View.INVISIBLE);
+            Intent projecteIntent = new Intent(LlistaActivitatsActivity.this, AfegirProjecteActivity.class);
+            startActivity(projecteIntent);
+
+
+        }
+    };
+
+        /**
      * Gestor de l'event de prémer la tecla 'enrera' del D-pad. El que fem es
      * anar "cap amunt" en l'arbre de tasques i projectes. Si el projecte pare
      * de les activitats que es mostren ara no és nul (n'hi ha), 'pugem' per

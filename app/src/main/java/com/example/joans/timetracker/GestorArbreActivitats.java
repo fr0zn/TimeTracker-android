@@ -497,7 +497,7 @@ public class GestorArbreActivitats extends Service implements Actualitzable {
             } else if (accio.equals(LlistaActivitatsActivity.CREAR_TASCA)) {
                 Log.d(tag, "crear");
 
-                new Projecte("prueba", "prueba", (Projecte) activitatPareActual);
+                new Tasca("prueba", "prueba", arrel);
             } else {
                 Log.d(tag, "accio desconeguda!");
             }

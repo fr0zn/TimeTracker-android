@@ -10,7 +10,7 @@ import android.widget.*;
 
 public class AfegirTascaActivity extends AppCompatActivity {
 
-    public static final String CREAR_TASCA = "Crear_tasca";
+    public static final String INFO_CREAR_TASCA = "Info_Crear_tasca";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +25,18 @@ public class AfegirTascaActivity extends AppCompatActivity {
         public void onClick(View v) {
 
             // Recopilació de dades per enviar per broadcast l'intent
-            Intent novaTasca = new Intent(AfegirTascaActivity.this, LlistaActivitatsActivity.class);
+           /* Intent novaTasca = new Intent(AfegirTascaActivity.INFO_CREAR_TASCA);
             EditText titolEntrada = (EditText)findViewById(R.id.titol);
             EditText descripcioEntrada = (EditText)findViewById(R.id.titol);
             novaTasca.putExtra("titol", titolEntrada.getText().toString());
             novaTasca.putExtra("descripcio", descripcioEntrada.getText().toString());
-            novaTasca.putExtra("opcio", CREAR_TASCA);
-            startActivity(novaTasca);
-
+            novaTasca.putExtra("opcio", INFO_CREAR_TASCA);
+            sendBroadcast(novaTasca);
+            */
 
             //Desde aqui el gestor lo recibe wtf
-            //Intent intent2 = new Intent(LlistaActivitatsActivity.CREAR_TASCA);
-            //sendBroadcast(intent2);
+            Intent intent2 = new Intent(AfegirTascaActivity.this, LlistaActivitatsActivity.class);
+            startActivity(intent2);
 
 
         }
