@@ -89,6 +89,8 @@ public class GestorArbreActivitats extends Service implements Actualitzable {
      */
     public static final String TE_FILLS = "Te_fills";
 
+    public static final String TASCA_CREADA="Tasca_creada";
+
     /**
      * Usada a {@link onCreate} i {@link carregaArbreActivitats} per crear un o
      * altre tipus d'arbre de projectes, tasques i intervals.
@@ -307,7 +309,7 @@ public class GestorArbreActivitats extends Service implements Actualitzable {
         filter.addAction(LlistaActivitatsActivity.DESA_ARBRE);
         filter.addAction(LlistaActivitatsActivity.PARA_SERVEI);
         filter.addAction(LlistaIntervalsActivity.PUJA_NIVELL);
-        filter.addAction(LlistaActivitatsActivity.CREAR_TASCA);
+        filter.addAction(AfegirTascaActivity.CREAR_TASCA);
         receptor = new Receptor();
         registerReceiver(receptor, filter);
 
@@ -494,10 +496,11 @@ public class GestorArbreActivitats extends Service implements Actualitzable {
                 activitatPareActual = activitatClicada;
             } else if (accio.equals(LlistaActivitatsActivity.PARA_SERVEI)) {
                 paraServei();
-            } else if (accio.equals(LlistaActivitatsActivity.CREAR_TASCA)) {
+            } else if (accio.equals(AfegirTascaActivity.CREAR_TASCA)) {
                 Log.d(tag, "crear");
-
-                new Tasca("prueba", "prueba", arrel);
+                //new Tasca("prueba", "prueba", arrel);
+                //Intent novaTasca = new Intent(GestorArbreActivitats.TASCA_CREADA);
+                //sendBroadcast(novaTasca);
             } else {
                 Log.d(tag, "accio desconeguda!");
             }

@@ -164,8 +164,6 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
                 // això farà redibuixar el ListView
                 aaAct.notifyDataSetChanged();
                 Log.d(tag, "mostro els fills actualitzats");
-            }else if (intent.getAction().equals(AfegirTascaActivity.INFO_CREAR_TASCA)){
-                Log.d("tag", "entra");
             }else {
                 // no pot ser
                 assert false : "intent d'acció no prevista";
@@ -183,18 +181,6 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
     // Aquests són els "serveis", identificats per un string, que demana
     // aquesta classe a la classe Service GestorArbreActivitats, en funció
     // de la interacció de l'usuari:
-
-    /**
-     * Opcions interactives del usuari
-     */
-    public static final String CREAR_TASCA = "Crear_tasca";
-    public static final String CREAR_PROJECTE = "Crear_projecte";
-    public static final String EDITAR_TASCA = "Editar_tasca";
-    public static final String EDITAR_PROJECTE = "Editar_projecte";
-    public static final String VEURE_TASCA = "Veure_tasca";
-    public static final String VEURE_PROJECTE = "Veure_projecte";
-    public static final String BORRAR_TASCA = "Borrar_tasca";
-    public static final String BORRAR_PROJECTE = "Borrar_projecte";
     /**
      * String que defineix l'acció de demanar a <code>GestorActivitats</code> la
      * llista de les dades dels fills de l'activitat actual, que és un projecte.
@@ -257,11 +243,9 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
     @Override
     public final void onResume() {
         Log.i(tag, "onResume");
-
         IntentFilter filter;
         filter = new IntentFilter();
         filter.addAction(GestorArbreActivitats.TE_FILLS);
-        filter.addAction(AfegirTascaActivity.INFO_CREAR_TASCA);
         receptor = new Receptor();
         registerReceiver(receptor, filter);
 
