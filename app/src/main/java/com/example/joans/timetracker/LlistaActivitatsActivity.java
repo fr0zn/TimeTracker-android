@@ -331,12 +331,6 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
                     assert false : "activitat que no es projecte ni tasca";
                 }
 
-                FloatingActionButton menuFAB = (FloatingActionButton) findViewById(R.id.menuFAB);
-                menuFAB.setOnClickListener(listenerFAB);
-                FloatingActionButton afegirTasca = (FloatingActionButton) findViewById(R.id.tascaFAB);
-                afegirTasca.setOnClickListener(tascaListenerFAB);
-                FloatingActionButton afegirProjecte = (FloatingActionButton) findViewById(R.id.projecteFAB);
-                afegirProjecte.setOnClickListener(projecteListenerFAB);
             }
         });
 
@@ -350,8 +344,50 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
                 menu.findItem(R.id.editar).setVisible(true);
                 menu.findItem(R.id.info).setVisible(true);
                 return true;
+                // No esborrar codi per cronometrar!!!
+                /*   Log.i(tag, "onItemLongClick");
+-                Log.d(tag, "pos = " + pos + ", id = " + id);
+-
+-                if (llistaDadesActivitats.get(pos).isTasca()) {
+-                    Intent inte;
+-                    if (!llistaDadesActivitats.get(pos).isCronometreEngegat()) {
+-                        inte = new Intent(
+-                                LlistaActivitatsActivity.ENGEGA_CRONOMETRE);
+-                        Log.d(tag, "enviat intent ENGEGA_CRONOMETRE de "
+-                                + llistaDadesActivitats.get(pos).getNom());
+-                    } else {
+-                        inte = new Intent(
+-                                LlistaActivitatsActivity.PARA_CRONOMETRE);
+-                        Log.d(tag, "enviat intent PARA_CRONOMETRE de "
+-                                + llistaDadesActivitats.get(pos).getNom());
+-                    }
+-                    inte.putExtra("posicio", pos);
+-                    sendBroadcast(inte);
+-                }
+-                // si es un projecte, no fem res
+-
+-                // Important :
+-                // "Programming Android", Z. Mednieks, L. Dornin,
+-                // G. Meike, M. Nakamura, O'Reilly 2011, pag. 187:
+-                //
+-                // If the listener returns false, the event is dispatched
+-                // to the View methods as though the handler did not exist.
+-                // If, on the other hand, a listener returns true, the event
+-                // is said to have been consumed. The View aborts any further
+-                // processing for it.
+-                //
+-                // Si retornem false, l'event long click es tornat a processar
+-                // pel listener de click "normal", fent que seguidament a
+-                // ordenar el cronometrat passem a veure la llista d'intervals. */
             }
         });
+
+        FloatingActionButton menuFAB = (FloatingActionButton) findViewById(R.id.menuFAB);
+        menuFAB.setOnClickListener(listenerFAB);
+        FloatingActionButton afegirTasca = (FloatingActionButton) findViewById(R.id.tascaFAB);
+        afegirTasca.setOnClickListener(tascaListenerFAB);
+        FloatingActionButton afegirProjecte = (FloatingActionButton) findViewById(R.id.projecteFAB);
+        afegirProjecte.setOnClickListener(projecteListenerFAB);
 
     }
 
