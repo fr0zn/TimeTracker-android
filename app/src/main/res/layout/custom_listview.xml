@@ -10,7 +10,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/folder_black"
+            android:src="@drawable/folder_black"
             android:id="@+id/carpeta_projecte" />
 
         <TextView android:layout_height="wrap_content"
