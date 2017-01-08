@@ -298,7 +298,7 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
         llistaDadesActivitats = new ArrayList<DadesActivitat>();
         //aaAct = new ArrayAdapter<DadesActivitat>(this, layoutID,
         //        llistaDadesActivitats);
-        aaAct = new ArrayAdapter<DadesActivitat>(this, layoutID,
+        aaAct = new CustomAdapter(this,layoutID,
                 llistaDadesActivitats);
         arrelListView.setAdapter(aaAct);
 
