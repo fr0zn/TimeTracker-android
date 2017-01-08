@@ -67,6 +67,33 @@ public class AfegirTascaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_afegir_tasca);
         Button afegirTascaOK = (Button) findViewById(R.id.addTaskOK);
         afegirTascaOK.setOnClickListener(AfegirTascaOKListener);
+        CheckBox check = (CheckBox)findViewById(R.id.tempsCheck);
+        check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Button bt = (Button) findViewById(R.id.limitTime);
+                if (isChecked) {
+                    bt.setText("05:00");
+                }else {
+                    bt.setText("--:--");
+                }
+            }
+        });
+        CheckBox check2 = (CheckBox)findViewById(R.id.progCheck);
+        check2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Button bt3 = (Button) findViewById(R.id.button3);
+                Button bt4 = (Button) findViewById(R.id.button4);
+                if (isChecked) {
+                    bt3.setText("12:00");
+                    bt4.setText("12:30");
+                }else {
+                    bt3.setText("--:--");
+                    bt4.setText("--:--");
+                }
+            }
+        });
     }
 
     private View.OnClickListener AfegirTascaOKListener = new View.OnClickListener() {
