@@ -49,65 +49,6 @@
         android:layout_below="@+id/checkBox2"
         android:layout_alignStart="@+id/checkBox2" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:hint="@string/hh_mm_ss"
-        android:layout_below="@+id/checkBox2"
-        android:layout_alignEnd="@+id/descripcio"
-        android:maxLines="1" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:layout_below="@+id/checkBox"
-        android:layout_toEndOf="@+id/textView3"
-        android:id="@+id/editText3"
-        android:hint="@string/hh_mm_ss" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/editText4"
-        android:hint="@string/hh_mm_ss"
-        android:layout_below="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
-
-    <TextView
-        android:text="@string/fi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editText4"
-        android:layout_toStartOf="@+id/editText4"
-        android:layout_marginBottom="11dp"
-        android:id="@+id/textView5" />
-
-    <TextView
-        android:text="@string/inici"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:layout_alignBaseline="@+id/editText3"
-        android:layout_alignBottom="@+id/editText3"
-        android:layout_toStartOf="@+id/editText3" />
-
-    <Button
-        android:text="@string/ok_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/addTaskOK"
-        android:layout_marginLeft="0dp"
-        tools:ignore="RtlHardcoded"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/textView4" />
-
     <TextView
         android:text="@string/description"
         android:layout_width="wrap_content"
@@ -131,5 +72,62 @@
         tools:ignore="LabelFor"
         android:layout_below="@+id/textView3"
         android:layout_alignStart="@+id/textView4" />
+
+    <Button
+        android:text="@string/ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addTaskOK"
+        android:layout_marginLeft="0dp"
+        tools:ignore="RtlHardcoded"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/textView4" />
+
+
+    <TextView
+        android:text="@string/inici"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_alignTop="@+id/button4"
+        android:layout_alignStart="@+id/checkBox" />
+
+    <TextView
+        android:text="@string/fi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:layout_alignTop="@+id/button3"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_alignBottom="@+id/editText4" />
+
+    <Button
+        android:text="--:--"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:onClick="showTimePickerDialog"
+        android:layout_below="@+id/checkBox"
+        android:layout_toEndOf="@+id/checkBox2" />
+
+    <Button
+        android:text="--:--"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:onClick="showTimePickerDialog"
+        android:layout_below="@+id/button3"
+        android:layout_alignStart="@+id/button3" />
+
+    <Button
+        android:text="--:--"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/limitTime"
+        android:onClick="showTimePickerDialog"
+        android:layout_below="@+id/checkBox2"
+        android:layout_toEndOf="@+id/checkBox2" />
+
 
 </RelativeLayout>

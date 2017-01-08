@@ -9,6 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+import android.app.*;
+import java.util.Calendar;
+import android.text.format.DateFormat;
+import android.widget.TimePicker;
+import android.support.v4.app.DialogFragment;
 
 import java.util.ArrayList;
 
@@ -17,6 +22,41 @@ import nucli.Projecte;
 import nucli.Tasca;
 
 public class AfegirTascaActivity extends AppCompatActivity {
+
+    public static class TimePickerFragment extends DialogFragment
+            implements TimePickerDialog.OnTimeSetListener {
+
+        private Integer viewID;
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current time as the default values for the picker
+            final Calendar c = Calendar.getInstance();
+            int hour = c.get(Calendar.HOUR_OF_DAY);
+            int minute = c.get(Calendar.MINUTE);
+
+            Bundle args = getArguments();
+            viewID = args.getInt("id", 0);
+
+            // Create a new instance of TimePickerDialog and return it
+            return new TimePickerDialog(getActivity(), this, hour, minute,
+                    DateFormat.is24HourFormat(getActivity()));
+        }
+
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            String timeString = hourOfDay+":"+minute;
+            TextView e1 = (TextView)getActivity().findViewById(viewID);
+            e1.setText(timeString);
+        }
+    }
+
+    public void showTimePickerDialog(View v) {
+        DialogFragment newFragment = new TimePickerFragment();
+        Bundle args = new Bundle();
+        args.putInt("id", v.getId());
+        newFragment.setArguments(args);
+        newFragment.show(getSupportFragmentManager(), "timePicker");
+    }
 
     public static final String CREAR_TASCA = "Info_Crear_tasca";
     private AfegirTascaActivity.Receptor receptor;
