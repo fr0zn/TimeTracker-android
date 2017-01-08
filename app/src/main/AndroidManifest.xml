@@ -15,7 +15,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".PrincipalActivity"/>
-
         <activity android:name=".LlistaIntervalsActivity"></activity>
         <activity android:name=".AfegirTascaActivity" android:label="@string/add_task_title"></activity>
         <activity android:name=".AfegirProjecteActivity" android:label="@string/add_project_title"></activity>
