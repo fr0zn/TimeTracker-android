@@ -15,6 +15,7 @@
         android:id="@+id/textView"
         android:textSize="20sp"
         android:textColor="@android:color/background_dark" />
+
     <Spinner
         android:layout_width="248dp"
         android:layout_height="wrap_content"

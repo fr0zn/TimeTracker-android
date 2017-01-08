@@ -14,37 +14,10 @@
         android:text="@string/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
         android:id="@+id/textView3"
         android:textColor="@android:color/background_dark"
         android:textSize="20sp"
-        android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/titol" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="@string/my_task"
-        android:ems="10"
-        android:id="@+id/titol"
-        android:textSize="20sp"
-        android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/textView4"
-        android:textColorLink="@color/colorAccent"
-        tools:ignore="LabelFor" />
-
-    <TextView
-        android:text="@string/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:textSize="20sp"
-        android:textColor="@android:color/background_dark"
-        android:layout_below="@+id/titol"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="23dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -58,15 +31,6 @@
         android:layout_alignStart="@+id/textView4"
         android:textColorLink="@android:color/holo_orange_light"
         tools:ignore="LabelFor" />
-
-    <Button
-        android:text="@string/ok_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/addTaskOK"
-        android:layout_marginTop="430dp"
-        android:layout_marginLeft="120dp"
-        tools:ignore="RtlHardcoded" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -133,5 +97,39 @@
         android:layout_alignBaseline="@+id/editText3"
         android:layout_alignBottom="@+id/editText3"
         android:layout_toStartOf="@+id/editText3" />
+
+    <Button
+        android:text="@string/ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addTaskOK"
+        android:layout_marginLeft="0dp"
+        tools:ignore="RtlHardcoded"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/textView4" />
+
+    <TextView
+        android:text="@string/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_marginStart="36dp"
+        android:layout_below="@+id/titol"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/my_task"
+        android:ems="10"
+        android:id="@+id/titol"
+        android:textSize="20sp"
+        android:textColorLink="@color/colorAccent"
+        tools:ignore="LabelFor"
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/textView4" />
 
 </RelativeLayout>
