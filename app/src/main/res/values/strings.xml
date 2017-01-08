@@ -24,6 +24,11 @@
 
     <!-- Report -->
     <string name="period">Període</string>
+    <string name="tasca_programada">Tasca Programada</string>
+    <string name="temps_limit">Temps Limit</string>
+    <string name="hh_mm_ss">hh:mm:ss</string>
+    <string name="fi">Fi:</string>
+    <string name="inici">Inici:</string>
     <string-array name="periods">
         <item>Setmana passada</item>
         <item>Mes passat</item>

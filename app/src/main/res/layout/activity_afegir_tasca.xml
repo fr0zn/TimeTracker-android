@@ -68,4 +68,70 @@
         android:layout_marginLeft="120dp"
         tools:ignore="RtlHardcoded" />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox2"
+        android:text="@string/temps_limit"
+        android:layout_below="@+id/descripcio"
+        android:layout_alignStart="@+id/descripcio" />
+
+    <CheckBox
+        android:text="@string/tasca_programada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox"
+        android:layout_marginTop="51dp"
+        android:layout_below="@+id/checkBox2"
+        android:layout_alignStart="@+id/checkBox2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:hint="@string/hh_mm_ss"
+        android:layout_below="@+id/checkBox2"
+        android:layout_alignEnd="@+id/descripcio"
+        android:maxLines="1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:layout_below="@+id/checkBox"
+        android:layout_toEndOf="@+id/textView3"
+        android:id="@+id/editText3"
+        android:hint="@string/hh_mm_ss" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:hint="@string/hh_mm_ss"
+        android:layout_below="@+id/editText3"
+        android:layout_alignStart="@+id/editText3" />
+
+    <TextView
+        android:text="@string/fi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText4"
+        android:layout_toStartOf="@+id/editText4"
+        android:layout_marginBottom="11dp"
+        android:id="@+id/textView5" />
+
+    <TextView
+        android:text="@string/inici"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_alignBaseline="@+id/editText3"
+        android:layout_alignBottom="@+id/editText3"
+        android:layout_toStartOf="@+id/editText3" />
+
 </RelativeLayout>
