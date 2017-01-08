@@ -100,10 +100,11 @@
         android:layout_alignTop="@+id/button3"
         android:layout_alignStart="@+id/textView2"
         android:layout_alignEnd="@+id/textView3"
-        android:layout_alignBottom="@+id/editText4" />
+        android:layout_alignBottom="@+id/editText4"
+        tools:ignore="UnknownId" />
 
     <Button
-        android:text="--:--"
+        android:text="@string/no_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button3"
@@ -112,7 +113,7 @@
         android:layout_toEndOf="@+id/checkBox2" />
 
     <Button
-        android:text="--:--"
+        android:text="@string/no_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button4"
@@ -121,7 +122,7 @@
         android:layout_alignStart="@+id/button3" />
 
     <Button
-        android:text="--:--"
+        android:text="@string/no_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/limitTime"
