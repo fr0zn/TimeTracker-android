@@ -293,7 +293,7 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
 
 
         //Switch switcher = (Switch) findViewById(R.id.switch1);
-       // switcher.setOnClickListener(switcherListener);
+        // switcher.setOnClickListener(switcherListener);
 
         setContentView(R.layout.activity_llista_activitats);
         arrelListView = (ListView) this.findViewById(R.id.listViewActivitats);
@@ -429,7 +429,7 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
         }
     };
 
-        /**
+    /**
      * Gestor de l'event de prémer la tecla 'enrera' del D-pad. El que fem es
      * anar "cap amunt" en l'arbre de tasques i projectes. Si el projecte pare
      * de les activitats que es mostren ara no és nul (n'hi ha), 'pugem' per

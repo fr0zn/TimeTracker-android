@@ -22,13 +22,13 @@
             android:height="20sp"
             android:textSize="18sp"
             android:gravity="left"
-
             android:textAlignment="gravity" />
 
         <Switch
-            android:text=""
+            android:text="dddd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:id="@+id/switch1" />
     </TableRow>
 
