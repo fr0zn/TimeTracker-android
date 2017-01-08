@@ -25,6 +25,25 @@
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:text="@string/ok_button"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:layout_below="@+id/editText5"
+        android:layout_alignEnd="@+id/editText5"
+        android:id="@+id/editText6"
+        android:hint="@string/dd_mm_yyyy_hh_mm_ss" />
+
     <TextView
         android:text="@string/tipus"
         android:layout_width="match_parent"
@@ -32,15 +51,15 @@
         android:id="@+id/textView6"
         android:textSize="20sp"
         android:textColor="@android:color/background_dark"
-        android:layout_below="@+id/period"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/editText6"
+        android:layout_centerHorizontal="true" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tipus"
         android:layout_below="@+id/textView6"
-        android:layout_alignEnd="@+id/textView6" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="match_parent"
@@ -52,20 +71,39 @@
         android:layout_below="@+id/tipus"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:text="@string/ok_button"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="21dp" />
-
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/format"
         android:layout_below="@+id/textView7"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/des_de"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView8"
+        android:layout_alignBaseline="@+id/editText5"
+        android:layout_alignBottom="@+id/editText5"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/fins_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:layout_alignBaseline="@+id/editText6"
+        android:layout_alignBottom="@+id/editText6"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editText5"
+        android:layout_below="@+id/period"
+        android:layout_alignParentEnd="true"
+        android:hint="@string/dd_mm_yyyy_hh_mm_ss" />
 
 </RelativeLayout>
