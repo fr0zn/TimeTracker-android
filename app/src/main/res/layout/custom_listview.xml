@@ -4,23 +4,26 @@
     android:layout_height="wrap_content" android:orientation="vertical"
     android:layout_width="fill_parent">
 
-    <TableRow android:layout_height="wrap_content"
-        android:layout_width="fill_parent">
+    <TableRow android:layout_height="match_parent"
+        android:layout_width="match_parent">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/folder_black"
+            android:src="@drawable/folder_project"
             android:id="@+id/carpeta_projecte" />
 
         <TextView android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:layout_weight="1"
-            android:textColor="#FFFFFF"
-            android:gravity="right"
+            android:textColor="#000000"
             android:id="@+id/dades_activitat"
-            android:text="dadesActivitat"
-            android:height="20sp" />
+            android:text=""
+            android:height="20sp"
+            android:textSize="18sp"
+            android:gravity="left"
+
+            android:textAlignment="gravity" />
 
         <Switch
             android:text=""

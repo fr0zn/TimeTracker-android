@@ -331,7 +331,7 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
             }
         });
 
-        // Un "long click" serveix per cronometrar, si es tracta d'una tasca.
+        // Un "long click" serveix per mostrar opcions.
         // Si es un projecte, no fara res.
         arrelListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -378,6 +378,7 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
                 // ordenar el cronometrat passem a veure la llista d'intervals. */
 
             }
+
         });
         FloatingActionButton menuFAB = (FloatingActionButton) findViewById(R.id.menuFAB);
         menuFAB.setOnClickListener(listenerFAB);
