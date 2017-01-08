@@ -34,6 +34,8 @@
     <string name="des_de">Des de:</string>
     <string name="fins_a">Fins a:</string>
     <string name="dd_mm_yyyy_hh_mm_ss">dd/mm/yyyy hh:mm:ss</string>
+    <string name="no_time">--:--</string>
+    <string name="no_date">--/--/--</string>
     <string-array name="periods">
         <item>Setmana passada</item>
         <item>Mes passat</item>
