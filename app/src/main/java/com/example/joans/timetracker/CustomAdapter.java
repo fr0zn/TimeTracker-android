@@ -26,9 +26,9 @@ public class CustomAdapter extends ArrayAdapter<DadesActivitat> {
         Switch switcher = (Switch) customView.findViewById(R.id.switch1);
         if (singleItem.isTasca()){
             iconaProjecte.setVisibility(customView.INVISIBLE);
-        } //else if (singleItem.isProjecte()){
-            //switcher.setVisibility(customView.INVISIBLE);
-        //}
+        }else if (singleItem.isProjecte()){
+            switcher.setVisibility(customView.INVISIBLE);
+        }
         //iconaProjecte.setImageResource(R.drawable.folder_black);
         dadesProjecte.setText(singleItem.toString());
         return customView;
