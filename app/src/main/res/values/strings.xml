@@ -29,12 +29,26 @@
     <string name="hh_mm_ss">hh:mm:ss</string>
     <string name="fi">Fi:</string>
     <string name="inici">Inici:</string>
+    <string name="format">Format</string>
+    <string name="tipus">Tipus</string>
     <string-array name="periods">
         <item>Setmana passada</item>
         <item>Mes passat</item>
         <item>Any passat</item>
         <item>Personalitzat</item>
     </string-array>
+    <string-array name="info_long">
+        <item>Breu</item>
+        <item>Detallat</item>
+    </string-array>
+    <string-array name="info_types">
+        <item>Text</item>
+        <item>HTML</item>
+        <item>XML</item>
+        <item>PDF</item>
+        <item>RTF</item>
+    </string-array>
+
 
 
 </resources>
