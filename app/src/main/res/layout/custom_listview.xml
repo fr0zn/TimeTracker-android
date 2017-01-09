@@ -28,11 +28,14 @@
             android:gravity="start"
             android:textAlignment="gravity" />
 
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
+        <ImageButton
+            android:layout_width="70px"
+            android:layout_height="70px"
+            android:scaleType="center"
+            android:gravity="center"
+            android:src="@drawable/play"
             android:id="@+id/switch1" />
+
     </TableRow>
 
 </TableLayout>

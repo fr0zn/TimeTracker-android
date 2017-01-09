@@ -290,11 +290,6 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
     public final void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(tag, "onCreate");
-
-
-        //Switch switcher = (Switch) findViewById(R.id.switch1);
-        // switcher.setOnClickListener(switcherListener);
-
         setContentView(R.layout.activity_llista_activitats);
         arrelListView = (ListView) this.findViewById(R.id.listViewActivitats);
         llistaDadesActivitats = new ArrayList<DadesActivitat>();
@@ -345,7 +340,7 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
                 menu.findItem(R.id.info).setVisible(true);
                 return true;
                 // No esborrar codi per cronometrar!!!
-                /*   Log.i(tag, "onItemLongClick");
+                /* Log.i(tag, "onItemLongClick");
 -                Log.d(tag, "pos = " + pos + ", id = " + id);
 -
 -                if (llistaDadesActivitats.get(pos).isTasca()) {
@@ -382,12 +377,39 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
             }
         });
 
+
         FloatingActionButton menuFAB = (FloatingActionButton) findViewById(R.id.menuFAB);
         menuFAB.setOnClickListener(listenerFAB);
         FloatingActionButton afegirTasca = (FloatingActionButton) findViewById(R.id.tascaFAB);
         afegirTasca.setOnClickListener(tascaListenerFAB);
         FloatingActionButton afegirProjecte = (FloatingActionButton) findViewById(R.id.projecteFAB);
         afegirProjecte.setOnClickListener(projecteListenerFAB);
+
+    }
+
+    public void start_task_at_position(ImageButton switcher, Integer position){
+
+        Log.d("START_TASK","pos"+position);
+        Log.d("START_TASK",llistaDadesActivitats.get(position).getNom());
+
+        if (llistaDadesActivitats.get(position).isTasca()) {
+            Intent inte;
+            if (!llistaDadesActivitats.get(position).isCronometreEngegat()) {
+                inte = new Intent(
+                        LlistaActivitatsActivity.ENGEGA_CRONOMETRE);
+                Log.d(tag, "enviat intent ENGEGA_CRONOMETRE de "
+                        + llistaDadesActivitats.get(position).getNom());
+                switcher.setImageResource(R.drawable.stop);
+            } else {
+                inte = new Intent(
+                        LlistaActivitatsActivity.PARA_CRONOMETRE);
+                Log.d(tag, "enviat intent PARA_CRONOMETRE de "
+                        + llistaDadesActivitats.get(position).getNom());
+                switcher.setImageResource(R.drawable.play);
+            }
+            inte.putExtra("posicio", position);
+            sendBroadcast(inte);
+        }
 
     }
 
