@@ -72,7 +72,9 @@ public class DadesInterval implements Serializable {
     public final String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy hh:mm");
         String strdi = sdf.format(dataInicial);
+        strdi = "Inici: "+strdi;
         String strdf = sdf.format(dataFinal);
+        strdf = "Fi: "+strdf;
 
         // TODO : aquest codi de conversió de durada en segons a
         // hores, minuts i segons, és redundant amb DadesActivitat.
@@ -95,7 +97,7 @@ public class DadesInterval implements Serializable {
                 - segonsPerMinut * minuts);
         // String strdurada = Long.toString(durada);
         String strdurada = hores + "h " + minuts + "m " + segons + "s";
-        return strdi + "-->" + strdf + " = " + strdurada;
+        return strdi + "                " + strdurada + " \r\n" + strdf;
     }
 
     // Getters

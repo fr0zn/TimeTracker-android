@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content" android:orientation="vertical"
     android:layout_width="fill_parent">
 
     <TableRow android:layout_height="match_parent"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        tools:ignore="UselessParent"
+        android:descendantFocusability="blocksDescendants">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/folder_project"
-            android:id="@+id/carpeta_projecte" />
+            android:id="@+id/carpeta_projecte"
+            android:contentDescription="@string/file" />
 
         <TextView android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -21,14 +25,13 @@
             android:text=""
             android:height="20sp"
             android:textSize="18sp"
-            android:gravity="left"
+            android:gravity="start"
             android:textAlignment="gravity" />
 
         <Switch
-            android:text="dddd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
             android:id="@+id/switch1" />
     </TableRow>
 
