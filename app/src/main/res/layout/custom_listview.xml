@@ -14,8 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/folder_project"
-            android:id="@+id/carpeta_projecte"
-            android:contentDescription="@string/file" />
+            android:id="@+id/carpeta_projecte" />
 
         <TextView android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -33,6 +32,7 @@
             android:layout_height="70px"
             android:scaleType="center"
             android:gravity="center"
+            android:background="#FFFFFF"
             android:src="@drawable/play"
             android:id="@+id/switch1" />
 
