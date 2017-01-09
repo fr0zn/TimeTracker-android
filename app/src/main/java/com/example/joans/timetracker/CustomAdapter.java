@@ -57,6 +57,13 @@ public class CustomAdapter extends ArrayAdapter<DadesActivitat> {
 
         if (singleItem.isTasca()){
             iconaProjecte.setVisibility(customView.INVISIBLE);
+
+            if (!llistaDadesActivitats.get(position).isCronometreEngegat()) {
+                switcher.setImageResource(R.drawable.play);
+            } else {
+                switcher.setImageResource(R.drawable.stop);
+            }
+
         }else if (singleItem.isProjecte()){
             switcher.setVisibility(customView.INVISIBLE);
         }

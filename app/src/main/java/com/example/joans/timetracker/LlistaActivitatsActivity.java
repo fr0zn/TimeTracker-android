@@ -399,13 +399,11 @@ public class LlistaActivitatsActivity extends AppCompatActivity {
                         LlistaActivitatsActivity.ENGEGA_CRONOMETRE);
                 Log.d(tag, "enviat intent ENGEGA_CRONOMETRE de "
                         + llistaDadesActivitats.get(position).getNom());
-                switcher.setImageResource(R.drawable.stop);
             } else {
                 inte = new Intent(
                         LlistaActivitatsActivity.PARA_CRONOMETRE);
                 Log.d(tag, "enviat intent PARA_CRONOMETRE de "
                         + llistaDadesActivitats.get(position).getNom());
-                switcher.setImageResource(R.drawable.play);
             }
             inte.putExtra("posicio", position);
             sendBroadcast(inte);
