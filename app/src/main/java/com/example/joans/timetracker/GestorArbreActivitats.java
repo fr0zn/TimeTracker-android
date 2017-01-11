@@ -40,6 +40,7 @@ import nucli.Tasca;
  * @author joans
  * @version 26 gener 2012
  */
+@SuppressWarnings("ALL")
 public class GestorArbreActivitats extends Service implements Actualitzable {
 
     /**
@@ -90,7 +91,7 @@ public class GestorArbreActivitats extends Service implements Actualitzable {
     public static final String TE_FILLS = "Te_fills";
 
     public static final String TASCA_CREADA="Tasca_creada";
-
+    public static final String PROJECTE_CREAT="Projecte_creat";
     /**
      * Usada a {@link onCreate} i {@link carregaArbreActivitats} per crear un o
      * altre tipus d'arbre de projectes, tasques i intervals.
@@ -310,6 +311,7 @@ public class GestorArbreActivitats extends Service implements Actualitzable {
         filter.addAction(LlistaActivitatsActivity.PARA_SERVEI);
         filter.addAction(LlistaIntervalsActivity.PUJA_NIVELL);
         filter.addAction(AfegirTascaActivity.CREAR_TASCA);
+        filter.addAction(AfegirProjecteActivity.CREAR_PROJECTE);
         receptor = new Receptor();
         registerReceiver(receptor, filter);
 
@@ -498,9 +500,14 @@ public class GestorArbreActivitats extends Service implements Actualitzable {
                 paraServei();
             } else if (accio.equals(AfegirTascaActivity.CREAR_TASCA)) {
                 Log.d(tag, "crear");
-                //new Tasca("prueba", "prueba", arrel);
-                //Intent novaTasca = new Intent(GestorArbreActivitats.TASCA_CREADA);
-                //sendBroadcast(novaTasca);
+                new Tasca(intent.getStringExtra("titol"), intent.getStringExtra("descripcio"), (Projecte) activitatPareActual);
+                Intent novaTasca = new Intent(GestorArbreActivitats.TASCA_CREADA);
+                sendBroadcast(novaTasca);
+            } else if (accio.equals(AfegirProjecteActivity.CREAR_PROJECTE)) {
+                Log.d(tag, "crear projecte");
+                new Projecte(intent.getStringExtra("titol"), intent.getStringExtra("descripcio"), (Projecte)activitatPareActual);
+                Intent nouprojecte = new Intent(GestorArbreActivitats.PROJECTE_CREAT);
+                sendBroadcast(nouprojecte);
             } else {
                 Log.d(tag, "accio desconeguda!");
             }

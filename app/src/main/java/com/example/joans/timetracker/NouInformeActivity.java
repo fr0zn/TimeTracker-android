@@ -39,7 +39,19 @@ public class NouInformeActivity extends AppCompatActivity {
         }
 
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            String timeString = hourOfDay+":"+minute;
+            String sh;
+            if(hourOfDay<10){
+                sh = "0"+hourOfDay;
+            }else {
+                sh= String.valueOf(hourOfDay);
+            }
+            String sm;
+            if(minute<10){
+                sm = "0"+minute;
+            }else{
+                sm = String.valueOf(minute);
+            }
+            String timeString = sh+":"+sm;
             TextView e1 = (TextView)getActivity().findViewById(viewID);
             e1.setText(timeString);
         }
@@ -64,7 +76,7 @@ public class NouInformeActivity extends AppCompatActivity {
             // Use the current time as the default values for the picker
             final Calendar c = Calendar.getInstance();
             int year = c.get(Calendar.YEAR);
-            int month = c.get(Calendar.MONTH)+1;//Because Month start at 0 index
+            int month = c.get(Calendar.MONTH);//Because Month start at 0 index
             int day = c.get(Calendar.DAY_OF_MONTH);
 
             Bundle args = getArguments();
@@ -75,7 +87,23 @@ public class NouInformeActivity extends AppCompatActivity {
         }
         @Override
         public void onDateSet(DatePicker view, int year, int month,int day) {
-            String timeString = day+"/"+month+"/"+year;
+            String sd;
+            if(day<10){
+               sd = "0"+day;
+            }else{
+               sd = String.valueOf(day);
+            }
+            String sm;
+            if(month<10){
+                sm = "0"+(month+1);
+            }else{
+                sm = String.valueOf(month);
+            }
+
+
+
+
+            String timeString = sd+"/"+sm+"/"+year;
             TextView e1 = (TextView)getActivity().findViewById(viewID);
             e1.setText(timeString);
         }

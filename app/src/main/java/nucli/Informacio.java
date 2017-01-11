@@ -27,6 +27,15 @@ public class Informacio implements Serializable {
 		this.nom = nom;
 	}
 
+	@Override
+	public String toString() {
+		return "Informacio{" +
+				"id=" + id +
+				", nom='" + nom + '\'' +
+				", descripcio='" + descripcio + '\'' +
+				'}';
+	}
+
 	private String descripcio = "";
 
 	public String getDescripcio() {

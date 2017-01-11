@@ -35,6 +35,7 @@ public class AfegirTascaActivity extends AppCompatActivity {
             int hour = c.get(Calendar.HOUR_OF_DAY);
             int minute = c.get(Calendar.MINUTE);
 
+
             Bundle args = getArguments();
             viewID = args.getInt("id", 0);
 
@@ -100,13 +101,13 @@ public class AfegirTascaActivity extends AppCompatActivity {
         public void onClick(View v) {
 
             // Recopilació de dades per enviar per broadcast l'intent
-            /*Intent novaTasca = new Intent(AfegirTascaActivity.CREAR_TASCA);
+            Intent novaTasca = new Intent(AfegirTascaActivity.CREAR_TASCA);
             EditText titolEntrada = (EditText)findViewById(R.id.titol);
-            EditText descripcioEntrada = (EditText)findViewById(R.id.titol);
+            EditText descripcioEntrada = (EditText)findViewById(R.id.descripcio);
             novaTasca.putExtra("titol", titolEntrada.getText().toString());
             novaTasca.putExtra("descripcio", descripcioEntrada.getText().toString());
             novaTasca.putExtra("opcio", CREAR_TASCA);
-            sendBroadcast(novaTasca);*/
+            sendBroadcast(novaTasca);
 
 
             //Desde aqui el gestor lo recibe wtf

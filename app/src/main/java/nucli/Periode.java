@@ -30,6 +30,15 @@ public class Periode implements Serializable {
 		return durada;
 	}
 
+	@Override
+	public String toString() {
+		return "Periode{" +
+				"dataInicial=" + dataInicial +
+				", dataFinal=" + dataFinal +
+				", durada=" + durada +
+				'}';
+	}
+
 	public void setDurada(long durada) {
 		this.durada = durada;
 		// System.out.println(this.info.descr + "durada " + getDurada());		
@@ -44,6 +53,7 @@ public class Periode implements Serializable {
 		setDataFinal(di);
 		setDurada(0);
 	}
+
 	
 	public Periode(Date di, Date df, long d) {
 	    dataInicial = di;

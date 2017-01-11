@@ -1,4 +1,6 @@
 package nucli;
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -50,11 +52,27 @@ public abstract class Activitat implements Serializable {
 	}
 
 	public Date getDataInicial() {
-		return getPeriode().getDataInicial();
+		if (getPeriode() != null) {
+			return getPeriode().getDataInicial();
+		} else {
+			return null;
+		}
+	}
+	public Date getDataFinal() {
+		if (getPeriode() != null) {
+			return getPeriode().getDataFinal();
+		} else {
+			return null;
+		}
 	}
 
-	public Date getDataFinal() {
-		return getPeriode().getDataFinal();
+	@Override
+	public String toString() {
+		return "Activitat{" +
+				"periode=" + periode +
+				", projectePare=" + projectePare +
+				", info=" + info +
+				'}';
 	}
 
 	public long getDurada() {

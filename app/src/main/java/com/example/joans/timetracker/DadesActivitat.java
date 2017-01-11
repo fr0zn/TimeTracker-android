@@ -1,5 +1,7 @@
 package com.example.joans.timetracker;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -109,7 +111,7 @@ public class DadesActivitat implements Serializable {
          * Factor de conversió
          */
         final long segonsPerMinut = 60;
-
+        Log.i("activity",act.toString());
         dataInicial = act.getDataInicial();
         dataFinal = act.getDataFinal();
         durada = act.getDurada();
